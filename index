@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المعرض — مشاريعي ومحاضراتي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0E1210;
+    --bg-card: #161B18;
+    --line: #262E29;
+    --ink: #ECEAE4;
+    --ink-dim: #8B948D;
+    --sage: #7FA88C;
+    --sage-bright: #A8D4B4;
+    --clay: #C98B5C;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Tajawal', sans-serif;
+    min-height:100vh;
+  }
+
+  /* subtle grain/texture background */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.025) 1px, transparent 0);
+    background-size: 26px 26px;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  header{
+    position:relative;
+    z-index:1;
+    padding: 64px 24px 40px;
+    text-align:center;
+    border-bottom: 1px solid var(--line);
+  }
+  .kicker{
+    font-family:'Reem Kufi', sans-serif;
+    font-size:13px;
+    letter-spacing:3px;
+    color: var(--sage);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Reem Kufi', sans-serif;
+    font-weight:700;
+    font-size:clamp(34px, 6vw, 56px);
+    margin:0 0 14px;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+  }
+  .lede{
+    color: var(--ink-dim);
+    font-size:16px;
+    max-width:480px;
+    margin: 0 auto;
+    line-height:1.9;
+  }
+
+  main{
+    position:relative;
+    z-index:1;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 56px 24px 90px;
+  }
+
+  .group{ margin-bottom: 64px; }
+  .group:last-child{ margin-bottom:0; }
+
+  .group-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom: 26px;
+  }
+  .group-num{
+    font-family:'Reem Kufi', sans-serif;
+    font-size:14px;
+    color: var(--clay);
+    border:1px solid rgba(201,139,92,.35);
+    padding:3px 10px;
+    border-radius:20px;
+  }
+  .group-title{
+    font-family:'Reem Kufi', sans-serif;
+    font-size: 24px;
+    font-weight:500;
+    color: var(--ink);
+  }
+  .group-line{
+    flex:1;
+    height:1px;
+    background: var(--line);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+  }
+
+  .card{
+    display:block;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    text-decoration:none;
+    color:inherit;
+    position:relative;
+    overflow:hidden;
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  }
+  .card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(127,168,140,.5);
+    box-shadow: 0 16px 40px rgba(0,0,0,.35);
+  }
+
+  .card-cover{
+    width:100%;
+    aspect-ratio: 16/9;
+    display:block;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-card);
+  }
+  .card-cover svg{ width:100%; height:100%; display:block; }
+
+  .card-body{
+    padding: 20px 22px 22px;
+  }
+
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:10px;
+  }
+  .card-arrow{
+    color: var(--ink-dim);
+    font-size:18px;
+    transition: transform .22s ease, color .22s ease;
+    flex-shrink:0;
+    margin-right: 10px;
+  }
+  .card:hover .card-arrow{
+    transform: translateX(-4px);
+    color: var(--sage-bright);
+  }
+
+  .card-title{
+    font-family:'Reem Kufi', sans-serif;
+    font-size:19px;
+    font-weight:500;
+    color: var(--ink);
+    margin: 0 0 10px;
+    line-height:1.5;
+  }
+  .card-desc{
+    font-size:14px;
+    color: var(--ink-dim);
+    line-height:1.85;
+    margin:0;
+  }
+
+  footer{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    padding: 30px 24px 50px;
+    color: var(--ink-dim);
+    font-size:13px;
+    border-top:1px solid var(--line);
+  }
+  footer b{ color: var(--sage-bright); }
+
+  @media (max-width:520px){
+    header{ padding:48px 20px 32px; }
+    main{ padding:40px 18px 70px; }
+    .grid{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">مكتبتي الرقمية</div>
+  <h1>المعرض</h1>
+  <p class="lede">كل محاضراتي، أدواتي، ومشاريعي في مكان واحد — دوس على أي بطاقة عشان تفتحها</p>
+</header>
+
+<main>
+
+  <div class="group">
+    <div class="group-head">
+      <span class="group-num">01</span>
+      <span class="group-title">شرعي</span>
+      <span class="group-line"></span>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="https://tayyibalmuslim-tech.github.io/" target="_blank" rel="noopener">
+        <div class="card-cover">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1B241E"/>
+                <stop offset="100%" stop-color="#0E1210"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="225" fill="url(#g1)"/>
+            <g opacity="0.5" stroke="#7FA88C" stroke-width="1">
+              <line x1="0" y1="30" x2="400" y2="30"/>
+              <line x1="0" y1="195" x2="400" y2="195"/>
+            </g>
+            <!-- five open-book pillars representing five subjects -->
+            <g transform="translate(200,112)">
+              <g stroke="#A8D4B4" stroke-width="2" fill="none" stroke-linecap="round">
+                <path d="M-90,20 L-90,-25 Q-90,-32 -83,-30 L-55,-20 L-55,25 Z" fill="rgba(127,168,140,.08)"/>
+                <path d="M-55,25 L-55,-20 L-27,-30 Q-20,-32 -20,-25 L-20,20 Z" fill="rgba(127,168,140,.14)"/>
+                <path d="M0,30 L-20,20 L-20,-25 Q-20,-34 -10,-33 L0,-30 Z" fill="rgba(168,212,180,.20)"/>
+                <path d="M0,30 L20,20 L20,-25 Q20,-34 10,-33 L0,-30 Z" fill="rgba(168,212,180,.20)"/>
+                <path d="M55,25 L55,-20 L27,-30 Q20,-32 20,-25 L20,20 Z" fill="rgba(127,168,140,.14)"/>
+                <path d="M90,20 L90,-25 Q90,-32 83,-30 L55,-20 L55,25 Z" fill="rgba(127,168,140,.08)"/>
+              </g>
+              <circle cx="0" cy="-46" r="3" fill="#C98B5C"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-body">
+        <div class="card-top">
+          <h3 class="card-title">الأكاديمية الشرعية</h3>
+          <div class="card-arrow">↖</div>
+        </div>
+        <p class="card-desc">المرجع الأساسي — خمس مواد: الفقه، الأخلاق، الأعمال والتوازن، العبادة، والحقوق والآداب.</p>
+        </div>
+      </a>
+
+      <a class="card" href="https://tayyibalmuslim-tech.github.io/fa_a5las/" target="_blank" rel="noopener">
+        <div class="card-cover">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1B241E"/>
+                <stop offset="100%" stop-color="#0E1210"/>
+              </linearGradient>
+              <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#A8D4B4" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#A8D4B4" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="225" fill="url(#g2)"/>
+            <circle cx="200" cy="112" r="70" fill="url(#glow2)"/>
+            <!-- concentric rings representing purity of intention, centered heart -->
+            <g transform="translate(200,112)" fill="none" stroke="#7FA88C" stroke-width="1.2" opacity="0.55">
+              <circle r="55"/>
+              <circle r="38"/>
+              <circle r="21"/>
+            </g>
+            <path transform="translate(200,112)" d="M0,-9 C-4,-15 -13,-15 -16,-7 C-19,0 -12,7 0,15 C12,7 19,0 16,-7 C13,-15 4,-15 0,-9 Z" fill="#C98B5C"/>
+          </svg>
+        </div>
+        <div class="card-body">
+        <div class="card-top">
+          <h3 class="card-title">سلسلة فقه الإخلاص</h3>
+          <div class="card-arrow">↖</div>
+        </div>
+        <p class="card-desc">محاضرات مركّزة على تصحيح النية وتزكية القلب في الأعمال والعبادات.</p>
+        </div>
+      </a>
+
+      <a class="card" href="https://tayyibalmuslim-tech.github.io/quran/" target="_blank" rel="noopener">
+        <div class="card-cover">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1B241E"/>
+                <stop offset="100%" stop-color="#0E1210"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="225" fill="url(#g3)"/>
+            <!-- crescent moon + soft horizontal lines representing recitation/verses -->
+            <path d="M255,60 A50,50 0 1 0 255,165 A38,38 0 1 1 255,60 Z" fill="#A8D4B4" opacity="0.9"/>
+            <g stroke="#7FA88C" stroke-width="2" stroke-linecap="round" opacity="0.55">
+              <line x1="60" y1="95" x2="150" y2="95"/>
+              <line x1="60" y1="112" x2="175" y2="112"/>
+              <line x1="60" y1="129" x2="130" y2="129"/>
+            </g>
+            <circle cx="330" cy="45" r="2" fill="#C98B5C"/>
+            <circle cx="350" cy="70" r="1.5" fill="#C98B5C" opacity="0.7"/>
+            <circle cx="320" cy="180" r="1.5" fill="#C98B5C" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+        <div class="card-top">
+          <h3 class="card-title">مصحف التدبر</h3>
+          <div class="card-arrow">↖</div>
+        </div>
+        <p class="card-desc">مصحف تفاعلي لتدبر الآيات، مساعد على القراءة المتأنية والتأمل في المعاني.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-head">
+      <span class="group-num">02</span>
+      <span class="group-title">أدوات وتطبيقاتي</span>
+      <span class="group-line"></span>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="https://tayyibalmuslim-tech.github.io/yawmi-app/" target="_blank" rel="noopener">
+        <div class="card-cover">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1B241E"/>
+                <stop offset="100%" stop-color="#0E1210"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="225" fill="url(#g4)"/>
+            <!-- sun arc rising over checklist ticks, representing daily prayer-time schedule -->
+            <path d="M60,150 A140,140 0 0 1 340,150" fill="none" stroke="#7FA88C" stroke-width="1.5" opacity="0.4"/>
+            <circle cx="200" cy="80" r="16" fill="#C98B5C" opacity="0.9"/>
+            <g stroke="#C98B5C" stroke-width="1.5" opacity="0.5">
+              <line x1="200" y1="50" x2="200" y2="40"/>
+              <line x1="228" y1="60" x2="235" y2="53"/>
+              <line x1="172" y1="60" x2="165" y2="53"/>
+            </g>
+            <g transform="translate(0,168)">
+              <g fill="#161B18" stroke="#7FA88C" stroke-width="1.5">
+                <rect x="90" y="0" width="16" height="16" rx="4"/>
+                <rect x="192" y="0" width="16" height="16" rx="4"/>
+                <rect x="294" y="0" width="16" height="16" rx="4"/>
+              </g>
+              <path d="M93,8 L97,12 L104,4" stroke="#A8D4B4" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M195,8 L199,12 L206,4" stroke="#A8D4B4" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-body">
+        <div class="card-top">
+          <h3 class="card-title">يومي — Yawmi</h3>
+          <div class="card-arrow">↖</div>
+        </div>
+        <p class="card-desc">متتبع مهام يومية مربوط بأوقات الصلاة، لتنظيم اليوم بروح إسلامية.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-head">
+      <span class="group-num">03</span>
+      <span class="group-title">تسويق وإدارة</span>
+      <span class="group-line"></span>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="https://tayyibalmuslim-tech.github.io/mshro3/" target="_blank" rel="noopener">
+        <div class="card-cover">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1B241E"/>
+                <stop offset="100%" stop-color="#0E1210"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="225" fill="url(#g5)"/>
+            <!-- rising growth bars -->
+            <g transform="translate(120,0)">
+              <rect x="0" y="150" width="30" height="45" rx="3" fill="#7FA88C" opacity="0.5"/>
+              <rect x="45" y="120" width="30" height="75" rx="3" fill="#7FA88C" opacity="0.7"/>
+              <rect x="90" y="85" width="30" height="110" rx="3" fill="#A8D4B4" opacity="0.85"/>
+              <rect x="135" y="55" width="30" height="140" rx="3" fill="#C98B5C"/>
+            </g>
+            <path d="M100,160 L145,130 L190,95 L280,60" fill="none" stroke="#ECEAE4" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <path d="M265,53 L280,60 L273,75" fill="none" stroke="#ECEAE4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+        <div class="card-top">
+          <h3 class="card-title">دليل تنمية المشاريع الصغيرة</h3>
+          <div class="card-arrow">↖</div>
+        </div>
+        <p class="card-desc">كتاب مرجعي شامل عن تنمية المشاريع الصغيرة في السوق المصري — استراتيجيات عملية للمبتدئين.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  صُنع بعناية — <b>طيب المسلم</b>
+</footer>
+
+</body>
+</html>
