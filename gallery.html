@@ -25,8 +25,6 @@
     font-family: 'Tajawal', sans-serif;
     min-height:100vh;
   }
-
-  /* subtle grain/texture background */
   body::before{
     content:"";
     position:fixed; inset:0;
@@ -35,90 +33,61 @@
     pointer-events:none;
     z-index:0;
   }
-
   header{
-    position:relative;
-    z-index:1;
+    position:relative; z-index:1;
     padding: 64px 24px 40px;
     text-align:center;
     border-bottom: 1px solid var(--line);
   }
   .kicker{
     font-family:'Reem Kufi', sans-serif;
-    font-size:13px;
-    letter-spacing:3px;
-    color: var(--sage);
-    text-transform:uppercase;
+    font-size:13px; letter-spacing:3px;
+    color: var(--sage); text-transform:uppercase;
     margin-bottom:14px;
   }
   h1{
     font-family:'Reem Kufi', sans-serif;
     font-weight:700;
     font-size:clamp(34px, 6vw, 56px);
-    margin:0 0 14px;
-    color: var(--ink);
+    margin:0 0 14px; color: var(--ink);
     letter-spacing: -0.5px;
   }
   .lede{
-    color: var(--ink-dim);
-    font-size:16px;
-    max-width:480px;
-    margin: 0 auto;
-    line-height:1.9;
+    color: var(--ink-dim); font-size:16px;
+    max-width:480px; margin: 0 auto; line-height:1.9;
   }
-
   main{
-    position:relative;
-    z-index:1;
-    max-width: 1160px;
-    margin: 0 auto;
+    position:relative; z-index:1;
+    max-width: 1160px; margin: 0 auto;
     padding: 56px 24px 90px;
   }
-
   .group{ margin-bottom: 64px; }
   .group:last-child{ margin-bottom:0; }
-
   .group-head{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
+    display:flex; align-items:baseline; gap:14px;
     margin-bottom: 26px;
   }
   .group-num{
-    font-family:'Reem Kufi', sans-serif;
-    font-size:14px;
+    font-family:'Reem Kufi', sans-serif; font-size:14px;
     color: var(--clay);
     border:1px solid rgba(201,139,92,.35);
-    padding:3px 10px;
-    border-radius:20px;
+    padding:3px 10px; border-radius:20px;
   }
   .group-title{
     font-family:'Reem Kufi', sans-serif;
-    font-size: 24px;
-    font-weight:500;
-    color: var(--ink);
+    font-size: 24px; font-weight:500; color: var(--ink);
   }
-  .group-line{
-    flex:1;
-    height:1px;
-    background: var(--line);
-  }
-
+  .group-line{ flex:1; height:1px; background: var(--line); }
   .grid{
     display:grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 18px;
   }
-
   .card{
-    display:block;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    text-decoration:none;
-    color:inherit;
-    position:relative;
-    overflow:hidden;
+    display:block; background: var(--bg-card);
+    border: 1px solid var(--line); border-radius: 16px;
+    text-decoration:none; color:inherit;
+    position:relative; overflow:hidden;
     transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
   }
   .card:hover{
@@ -126,64 +95,33 @@
     border-color: rgba(127,168,140,.5);
     box-shadow: 0 16px 40px rgba(0,0,0,.35);
   }
-
   .card-cover{
-    width:100%;
-    aspect-ratio: 16/9;
-    display:block;
-    border-bottom: 1px solid var(--line);
-    background: var(--bg-card);
+    width:100%; aspect-ratio: 16/9; display:block;
+    border-bottom: 1px solid var(--line); background: var(--bg-card);
   }
   .card-cover svg{ width:100%; height:100%; display:block; }
-
-  .card-body{
-    padding: 20px 22px 22px;
-  }
-
+  .card-body{ padding: 20px 22px 22px; }
   .card-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
+    display:flex; justify-content:space-between; align-items:flex-start;
     margin-bottom:10px;
   }
   .card-arrow{
-    color: var(--ink-dim);
-    font-size:18px;
+    color: var(--ink-dim); font-size:18px;
     transition: transform .22s ease, color .22s ease;
-    flex-shrink:0;
-    margin-right: 10px;
+    flex-shrink:0; margin-right: 10px;
   }
-  .card:hover .card-arrow{
-    transform: translateX(-4px);
-    color: var(--sage-bright);
-  }
-
+  .card:hover .card-arrow{ transform: translateX(-4px); color: var(--sage-bright); }
   .card-title{
-    font-family:'Reem Kufi', sans-serif;
-    font-size:19px;
-    font-weight:500;
-    color: var(--ink);
-    margin: 0 0 10px;
-    line-height:1.5;
+    font-family:'Reem Kufi', sans-serif; font-size:19px;
+    font-weight:500; color: var(--ink); margin: 0 0 10px; line-height:1.5;
   }
-  .card-desc{
-    font-size:14px;
-    color: var(--ink-dim);
-    line-height:1.85;
-    margin:0;
-  }
-
+  .card-desc{ font-size:14px; color: var(--ink-dim); line-height:1.85; margin:0; }
   footer{
-    position:relative;
-    z-index:1;
-    text-align:center;
-    padding: 30px 24px 50px;
-    color: var(--ink-dim);
-    font-size:13px;
-    border-top:1px solid var(--line);
+    position:relative; z-index:1; text-align:center;
+    padding: 30px 24px 50px; color: var(--ink-dim);
+    font-size:13px; border-top:1px solid var(--line);
   }
   footer b{ color: var(--sage-bright); }
-
   @media (max-width:520px){
     header{ padding:48px 20px 32px; }
     main{ padding:40px 18px 70px; }
@@ -223,7 +161,6 @@
               <line x1="0" y1="30" x2="400" y2="30"/>
               <line x1="0" y1="195" x2="400" y2="195"/>
             </g>
-            <!-- five open-book pillars representing five subjects -->
             <g transform="translate(200,112)">
               <g stroke="#A8D4B4" stroke-width="2" fill="none" stroke-linecap="round">
                 <path d="M-90,20 L-90,-25 Q-90,-32 -83,-30 L-55,-20 L-55,25 Z" fill="rgba(127,168,140,.08)"/>
@@ -261,7 +198,6 @@
             </defs>
             <rect width="400" height="225" fill="url(#g2)"/>
             <circle cx="200" cy="112" r="70" fill="url(#glow2)"/>
-            <!-- concentric rings representing purity of intention, centered heart -->
             <g transform="translate(200,112)" fill="none" stroke="#7FA88C" stroke-width="1.2" opacity="0.55">
               <circle r="55"/>
               <circle r="38"/>
@@ -289,7 +225,6 @@
               </linearGradient>
             </defs>
             <rect width="400" height="225" fill="url(#g3)"/>
-            <!-- crescent moon + soft horizontal lines representing recitation/verses -->
             <path d="M255,60 A50,50 0 1 0 255,165 A38,38 0 1 1 255,60 Z" fill="#A8D4B4" opacity="0.9"/>
             <g stroke="#7FA88C" stroke-width="2" stroke-linecap="round" opacity="0.55">
               <line x1="60" y1="95" x2="150" y2="95"/>
@@ -316,6 +251,110 @@
   <div class="group">
     <div class="group-head">
       <span class="group-num">02</span>
+      <span class="group-title">تاريخ وسير</span>
+      <span class="group-line"></span>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="https://tayyibalmuslim-tech.github.io/100_questions_history_improved/" target="_blank" rel="noopener">
+        <div class="card-cover">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g6" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1B241E"/>
+                <stop offset="100%" stop-color="#0E1210"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="225" fill="url(#g6)"/>
+            <g transform="translate(200,112)">
+              <path d="M-70,-50 L70,-50 Q80,-50 80,-40 L80,45 Q80,55 70,55 L-70,55 Q-80,55 -80,45 L-80,-40 Q-80,-50 -70,-50 Z"
+                    fill="rgba(127,168,140,.08)" stroke="#7FA88C" stroke-width="1.5"/>
+              <text x="0" y="15" text-anchor="middle" font-family="Georgia, serif" font-size="70" fill="#A8D4B4" opacity="0.9">؟</text>
+            </g>
+            <circle cx="335" cy="45" r="2" fill="#C98B5C"/>
+            <circle cx="60" cy="185" r="1.5" fill="#C98B5C" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+        <div class="card-top">
+          <h3 class="card-title">100 سؤال في التاريخ</h3>
+          <div class="card-arrow">↖</div>
+        </div>
+        <p class="card-desc">تفكيك الشبهات التاريخية بمنهج نقدي، وإعادة قراءة الأحداث من منظور إسلامي بعيداً عن التسطيح.</p>
+        </div>
+      </a>
+
+      <a class="card" href="https://tayyibalmuslim-tech.github.io/SERA/" target="_blank" rel="noopener">
+        <div class="card-cover">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g7" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1B241E"/>
+                <stop offset="100%" stop-color="#0E1210"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="225" fill="url(#g7)"/>
+            <g transform="translate(200,120)">
+              <path d="M-85,15 L0,-5 L85,15 L85,45 L0,25 L-85,45 Z" fill="rgba(127,168,140,.12)" stroke="#7FA88C" stroke-width="1.5"/>
+              <line x1="0" y1="-5" x2="0" y2="25" stroke="#7FA88C" stroke-width="1" opacity="0.5"/>
+            </g>
+            <path d="M80,60 Q140,20 200,60 T320,60" fill="none" stroke="#C98B5C" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <circle cx="320" cy="60" r="3" fill="#C98B5C"/>
+          </svg>
+        </div>
+        <div class="card-body">
+        <div class="card-top">
+          <h3 class="card-title">سيرة راغب السرجاني</h3>
+          <div class="card-arrow">↖</div>
+        </div>
+        <p class="card-desc">السيرة النبوية بمنهج تحليلي استراتيجي — سنن التغيير والنصر وإدارة الأزمات من واقع التاريخ.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-head">
+      <span class="group-num">03</span>
+      <span class="group-title">فكري وحركي</span>
+      <span class="group-line"></span>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="https://tayyibalmuslim-tech.github.io/AIN/steps/00-%D8%A7%D9%84%D9%85%D9%82%D8%AF%D9%85%D8%A9.html" target="_blank" rel="noopener">
+        <div class="card-cover">
+          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g8" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1B241E"/>
+                <stop offset="100%" stop-color="#0E1210"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="225" fill="url(#g8)"/>
+            <g transform="translate(200,112)">
+              <circle r="55" fill="none" stroke="#7FA88C" stroke-width="1.2" opacity="0.5"/>
+              <path d="M0,-38 L10,0 L0,38 L-10,0 Z" fill="#C98B5C" opacity="0.9"/>
+              <circle r="4" fill="#A8D4B4"/>
+            </g>
+            <path d="M40,190 L360,190" stroke="#262E29" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="card-body">
+        <div class="card-top">
+          <h3 class="card-title">أين الطريق؟</h3>
+          <div class="card-arrow">↖</div>
+        </div>
+        <p class="card-desc">سلسلة فكرية-حركية لبناء الرؤية الاستراتيجية والوعي بالواقع. محتوى تحليلي/سياسي، منفصل عن باقي الأقسام.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-head">
+      <span class="group-num">04</span>
       <span class="group-title">أدوات وتطبيقاتي</span>
       <span class="group-line"></span>
     </div>
@@ -331,7 +370,6 @@
               </linearGradient>
             </defs>
             <rect width="400" height="225" fill="url(#g4)"/>
-            <!-- sun arc rising over checklist ticks, representing daily prayer-time schedule -->
             <path d="M60,150 A140,140 0 0 1 340,150" fill="none" stroke="#7FA88C" stroke-width="1.5" opacity="0.4"/>
             <circle cx="200" cy="80" r="16" fill="#C98B5C" opacity="0.9"/>
             <g stroke="#C98B5C" stroke-width="1.5" opacity="0.5">
@@ -364,7 +402,7 @@
 
   <div class="group">
     <div class="group-head">
-      <span class="group-num">03</span>
+      <span class="group-num">05</span>
       <span class="group-title">تسويق وإدارة</span>
       <span class="group-line"></span>
     </div>
@@ -380,7 +418,6 @@
               </linearGradient>
             </defs>
             <rect width="400" height="225" fill="url(#g5)"/>
-            <!-- rising growth bars -->
             <g transform="translate(120,0)">
               <rect x="0" y="150" width="30" height="45" rx="3" fill="#7FA88C" opacity="0.5"/>
               <rect x="45" y="120" width="30" height="75" rx="3" fill="#7FA88C" opacity="0.7"/>
